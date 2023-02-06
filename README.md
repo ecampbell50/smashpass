@@ -26,3 +26,10 @@ https://sourmash.readthedocs.io/en/latest/
 - when customising the network graphs, self-loops and node labels will likely cluter your graph and make it uninterpretable. Reccomended to remove these
 - removing certain edge values is essential as every node will have some similarity to every other node, clique-formation not possible unless you specify
 - will upload separate script just for creating nertwork graphs
+
+# Network Script
+This script requires the sourmash .csv output file. The sourmash standard .csv output is not compatible with my networkx code, so this script will convert it to a usable form. If you have done that yourself, you should be able to comment out the corresponding code and replace file names
+
+Essential changes to make to the script:
+- Line 9: must specify the file name of the sourmash output .csv
+- Line 48: #ADD_EDGE_VALUE_HERE must be replaced with the pairwise similarity value of edges you'd like to remove (e.g., '0.6' will remove edges less than 0.6
